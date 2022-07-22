@@ -11,7 +11,11 @@ const ShoppingProductDescription = ({ product, removeProduct, lessProductInStora
     const value = Number(e.target.value);
     if (value < 1) return;
 
+    if (value > quantity) {
+      addProductInStorage(product, 1);
+    }
     if (value < quantity) {
+      lessProductInStorage(product, 1);
     }
   };
   return (

@@ -69,7 +69,12 @@ const ShoppingCartTemplate = () => {
                   <div className="items">
                     {productsStorage?.map((product) => (
                       <div key={product.id}>
-                        <ShoppingProductDescription product={product} removeProduct={removeProduct} />
+                        <ShoppingProductDescription
+                          product={product}
+                          removeProduct={removeProduct}
+                          lessProductInStorage={lessProductInStorage}
+                          addProductInStorage={addProductInStorage}
+                        />
                         <hr />
                       </div>
                     ))}
