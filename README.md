@@ -73,7 +73,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Demo
 
-Link to [demo](https://code-challenge-mercado-libre.herokuapp.com/)
+Link to [demo](https://sell-smartphones.herokuapp.com/)
 
 ## Color Reference
 
