@@ -1,4 +1,4 @@
-# Code challenge - Mercado libre 🛍️
+# Code Challenge - MacroPay 🛍️
 
 This is a small application created in React with NextJs, a small clone of smartphone e-commerce.
 
@@ -26,10 +26,6 @@ The five stages of
 - Organisms
 - Templates
 - Pages
-
-## Documentation
-
-[Documentation](https://drive.google.com/file/d/1s-iftaoTZ4L_hleoFOEAhBmhi7S5eDwj/view?usp=sharing)
 
 ## Run Locally
 
