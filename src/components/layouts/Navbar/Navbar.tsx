@@ -8,6 +8,8 @@ const Navbar = (): ReactElement => {
   const router = useRouter();
   const { shoppingCartState } = useContext(ShoppingCartContext);
   const { products } = shoppingCartState;
+  const pathname = router.pathname;
+  const currentRoute = pathname.split('/')[1];
 
   const getTotalProducts = (): number => {
     let totalProducts = 0;
@@ -26,6 +28,8 @@ const Navbar = (): ReactElement => {
   const closeSession = (data) => {
     router.replace('/login');
   };
+
+  const getActiveTag = (route) => (route === currentRoute ? 'nav-link active' : 'nav-link');
 
   return (
     <nav className="navbar navbar-dark bg-primary navbar-expand-lg">
@@ -47,17 +51,17 @@ const Navbar = (): ReactElement => {
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
             <li className="nav-item">
-              <a className="nav-link" href="/products">
+              <a className={getActiveTag('products')} href="/products">
                 Products
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">
+              <a className={getActiveTag('about')} href="/about">
                 About
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/contact">
+              <a className={getActiveTag('contact')} href="/contact">
                 Contact
               </a>
             </li>
@@ -76,19 +80,6 @@ const Navbar = (): ReactElement => {
         </div>
       </div>
     </nav>
-    // <nav className="bg-primary-color shadow">
-    //   <input
-    //     type="text"
-    //     name="searchBox"
-    //     placeholder="Nunca dejes de buscar"
-    //     value={searchValue}
-    //     onChange={onChangeSearchBox}
-    //     onKeyDownCapture={onEnterCapture}
-    //   />
-    //   <button type="button" onClick={onSearch}>
-    //     <img src="/assets/ic_search_large.png" className="ml-2 h-5 w-5" />
-    //   </button>
-    // </nav>
   );
 };
 
