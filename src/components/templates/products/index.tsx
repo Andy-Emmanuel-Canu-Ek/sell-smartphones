@@ -12,22 +12,27 @@ const ProductTemplate = (): ReactElement => {
 
   const onSearchValue = () => setSearchValue(searchText);
 
+  const onEnterCapture = (event) => {
+    if (event.key === 'Enter') onSearchValue();
+  };
+
   return (
     <div>
       <div className="card">
         <div className="card-body">
-          <form className="d-flex" role="search">
+          <div className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
               onChange={onChangeSearch}
+              onKeyDownCapture={onEnterCapture}
             />
             <button className="btn btn-primary" type="button" onClick={onSearchValue}>
               Search
             </button>
-          </form>
+          </div>
         </div>
       </div>
       <br />

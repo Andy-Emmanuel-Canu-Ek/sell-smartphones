@@ -11,7 +11,8 @@ const ShoppingCartTemplate = () => {
   const router = useRouter();
   const useCurrentProductLocalStorage: ProductLocalStorage = useProductLocalStorage();
 
-  const { productsStorage, clearProductsStorage, removeProductStorage } = useCurrentProductLocalStorage;
+  const { productsStorage, clearProductsStorage, removeProductStorage, lessProductInStorage, addProductInStorage } =
+    useCurrentProductLocalStorage;
 
   const cartHasProducts = productsStorage?.length > 0;
 

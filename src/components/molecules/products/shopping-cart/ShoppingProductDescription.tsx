@@ -1,11 +1,19 @@
 import React from 'react';
 import { formatMoney } from 'shared/utils/money';
 
-const ShoppingProductDescription = ({ product, removeProduct }) => {
+const ShoppingProductDescription = ({ product, removeProduct, lessProductInStorage, addProductInStorage }) => {
   const { price, img, title, quantity } = product;
   const totalCost = formatMoney(quantity * price);
 
   const onRemoveCurrentProduct = () => removeProduct(product);
+
+  const onChangeQuantity = (e) => {
+    const value = Number(e.target.value);
+    if (value < 1) return;
+
+    if (value < quantity) {
+    }
+  };
   return (
     <>
       <div className="product">
@@ -29,7 +37,13 @@ const ShoppingProductDescription = ({ product, removeProduct }) => {
                     <br />
                     <div className="col-md-4 ">
                       <label>Quantity:</label>
-                      <input id="quantity" type="number" value={quantity} className="form-control quantity-input" />
+                      <input
+                        id="quantity"
+                        type="number"
+                        value={quantity}
+                        className="form-control quantity-input"
+                        onChange={onChangeQuantity}
+                      />
                     </div>
                     <br />
                     <div className="col-md-8 ">
